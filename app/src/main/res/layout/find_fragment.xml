@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="50dp"
+    android:background="@color/mainbackground"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_bar"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.jude.rollviewpager.RollPagerView
+                    android:id="@+id/rollPagerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="182dp"
+                    android:clipToPadding="false"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    app:rollviewpager_hint_color="@color/color_cdad3c"
+                    app:rollviewpager_play_delay="1000"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:drawable/dialog_holo_light_frame">
+
+                    <TextView
+                        android:id="@+id/today"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:drawableTop="@drawable/selector_homeicon"
+                        android:gravity="center"
+                        android:text="今日"
+                        android:textColor="@color/color_454545"/>
+
+                    <TextView
+                        android:id="@+id/treehole"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:drawableTop="@drawable/selector_homeicon"
+                        android:gravity="center"
+                        android:text="树洞"
+                        android:textColor="@color/color_454545"/>
+
+                    <TextView
+                        android:id="@+id/music"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:drawableTop="@drawable/selector_homeicon"
+                        android:gravity="center"
+                        android:text="听经"
+                        android:textColor="@color/color_454545"/>
+
+                    <TextView
+                        android:id="@+id/exercise"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:drawableTop="@drawable/selector_homeicon"
+                        android:gravity="center"
+                        android:text="禅修"
+                        android:textColor="@color/color_454545"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/selector_homeicon"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        android:text="心理治愈"
+                        android:textColor="@color/color_cdad3c"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/more_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:drawableRight="@drawable/selector_homeicon"
+                        android:gravity="center_vertical"
+                        android:text="更多"
+                        android:textColor="@color/color_929292"
+                        android:textSize="12sp"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/masterRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>
